@@ -1,9 +1,7 @@
 {
-  "schema_version": 1,
-  "verified_date_kst": "2026-10-09",
-  "status": "TRAINING_PIPELINE_VALIDATED_CANDIDATE_NOT_PROMOTED",
-  "scope": "PYTHON_TRAINING_AND_RUNTIME_SIMULATION",
-  "sources": [
+  "review_context_kst": "2026-10-09T06:26:48+09:00",
+  "previous_review": "2026-10-09T05:36:14+09:00",
+  "branches": [
     {
       "key": "shared/donghan",
       "branch": "feature/donghan-placement-planner",
@@ -80,44 +78,41 @@
       "changed": false
     }
   ],
-  "tests": {
-    "donghan": {
-      "passed": 74,
-      "skipped": 1,
-      "seconds": 2.36,
-      "skip_reason": "pac_simulation unavailable"
+  "meaningful_change": "Team Gazebo robot pedestal pose and matching kinematic robot config.",
+  "integration_review": {
+    "coordinates": {
+      "robot_world_m": [
+        1.35,
+        0.15,
+        0.5
+      ],
+      "pallet_world_xy_m": [
+        1.35,
+        -1
+      ],
+      "deck_m": 0.15,
+      "base_from_pallet_center": [
+        0,
+        1.15,
+        0.35,
+        0
+      ],
+      "pick_point_base_m": [
+        -1.35,
+        1.05,
+        0.4
+      ]
     },
-    "team": {
-      "passed": 202,
-      "skipped": 4,
-      "seconds": 70.57,
-      "skip_reason": "gymnasium/torch unavailable"
-    }
+    "package_resolution": "Donghan pac_common/pac_planning + team candidates/highlevel/robot_check/runtime; generator isolated subprocess.",
+    "ems": "Training rows require EMS_SUPPLIED; runtime provenance and candidate source/config fingerprints recorded.",
+    "state_version_buffer": "Existing stale-result rejection and delayed ROS snapshot planning kept; full ordered candidates required by stage6.",
+    "ppo": "Rule used to isolate the low-level comparison; proxy + DBLF value-provider and 4 slots preserved. No PPO retraining or model replacement.",
+    "moveit": "No MoveIt action integration/robot execution verified; team Gazebo driver still timed JointTrajectory and spawn-at-place.",
+    "remote_write": "No remote write attempted; patches supplied.",
+    "ros2_humble": "NOT_RUN",
+    "gazebo_physics": "NOT_RUN",
+    "robot_motion": "NOT_RUN"
   },
-  "test_environment": {
-    "python": "3.12.14",
-    "numpy": "2.3.5",
-    "pyyaml": "6.0.3",
-    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
-    "target_ubuntu_22_04_python_3_10": "NOT_RUN"
-  },
-  "evaluation_total_episodes": 360,
-  "evaluation_total_paired_streams": 90,
-  "stream_pairing_exact": true,
-  "robot_execution": "NOT_RUN",
-  "ros2_humble": "NOT_RUN",
-  "moveit": "NOT_RUN",
-  "gazebo_physics": "NOT_RUN",
-  "remaining": [
-    "candidate model has no DBLF pallet advantage",
-    "shared simulated overload/noisy-placement safety issues",
-    "per-candidate feature feasibility probes are the latency bottleneck",
-    "ROS2/MoveIt action execution and gripper physics unverified",
-    "large benchmark preset not run",
-    "full-scale warm-start not run; small compatibility/resume regressions passed"
-  ],
-  "model_report": "pac-mission1-shared/reports/model_training_v2_20261009.json",
-  "historical_verification": "pac-mission1-shared/reports/verification_20261008_legacy.json",
-  "github_write_attempted": false,
-  "unpublished_changes": true
+  "last_checked_kst": "2026-10-09T06:59:14+09:00",
+  "changes_since_0626_review": []
 }
